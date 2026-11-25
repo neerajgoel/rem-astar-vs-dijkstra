@@ -1,0 +1,38 @@
+{
+  "name": "rem-astar-vs-dijkstra",
+  "version": "1.0.0",
+  "description": "A* vs Dijkstra on the real Manhattan road graph: a 3-minute Remotion video",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.544",
+    "@remotion/google-fonts": "4.0.544",
+    "@remotion/media": "4.0.544",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.544",
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render astar-vs-dijkstra out/video.mp4",
+    "lint": "eslint src && tsc",
+    "music": "node scripts/generate-music.mjs",
+    "sfx": "python3 scripts/generate-sfx.py",
+    "fetch-osm": "node scripts/fetch-osm.mjs"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}
