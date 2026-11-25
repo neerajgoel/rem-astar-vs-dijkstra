@@ -2,15 +2,38 @@
 
 A 3-minute, 16:9 (1920x1080, 30fps) [Remotion](https://www.remotion.dev) video that races Dijkstra and A* across the real drivable road graph of Lower/Midtown Manhattan, shows why A* explores less (the heuristic cone), and ends on a cheat sheet.
 
+## Setup
+
+Requirements:
+
+- [Node.js](https://nodejs.org) 20.19+, 22.13+ or 24+ (includes npm)
+- Git
+- An internet connection: rendering downloads the fonts from Google Fonts
+- Optional, only to regenerate assets: [ffmpeg](https://ffmpeg.org) (music) and Python 3 (sound effects)
+
+Get the code and install the dependencies:
+
+```console
+git clone https://github.com/neerajgoel/rem-astar-vs-dijkstra.git
+cd rem-astar-vs-dijkstra
+npm i
+```
+
+Remotion downloads its own headless Chrome the first time you preview or render, so there is nothing else to install.
+
 ## Run it
 
 ```console
-npm i
-npm run dev       # Remotion Studio preview
-npm run render    # renders out/video.mp4
+npm run dev       # Remotion Studio preview at http://localhost:3000
+npm run render    # renders the full video to out/video.mp4
+npm run lint      # ESLint + TypeScript check
 ```
 
-Rendering loads Google Fonts, so it needs network access.
+To render a single frame as a quick check:
+
+```console
+npx remotion still astar-vs-dijkstra out/frame.png --frame=900
+```
 
 ## Layout
 
